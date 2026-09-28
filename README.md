@@ -1,6 +1,6 @@
-# Bounty.com Redesign Summary
+# Bounty.com Redesign
 
-This project rebuilds Bounty.com using a modern, professional stack and aesthetic while preserving its core functionality.
+A modern, professional rebuild of Bounty.com, a UK pregnancy and parenting support site. Built on top of an existing partial implementation and completed into a fully working, linked, and functional site.
 
 ## Tech Stack
 * **Framework**: Next.js 16 (App Router)
@@ -8,25 +8,53 @@ This project rebuilds Bounty.com using a modern, professional stack and aestheti
 * **Fonts**: `next/font/google` (Fraunces & Plus Jakarta Sans)
 
 ## Design System
-* **Colors**: 
-  * Background: Linen (`#FAF7F2`) for a warm, organic feel (instead of standard white or grey).
-  * Accents: Sage green (`#6B8F71`) and Peach (`#E8A87C`) to convey growth, nature, and warmth without resorting to cliché pinks and blues.
+* **Colors**:
+  * Background: Linen (`#FAF7F2`) for a warm, organic feel.
+  * Accents: Sage green (`#6B8F71`) and Peach (`#E8A87C`) to convey growth, nature, and warmth.
   * Typography: Ink (`#1A1D23`) for high contrast, Slate (`#5C6670`) for secondary text.
-* **Typography**:
-  * Headings: **Fraunces** — a soft, slightly wonky variable serif that feels premium yet approachable.
-  * Body: **Plus Jakarta Sans** — highly legible, geometric sans-serif that balances the serif headings perfectly.
-* **UI Features**:
-  * **Liquid Glass**: The tools bar on the homepage uses a modern frosted-glass effect with a subtle sheen over a sage gradient.
-  * **Bento Grids**: Asymmetric layouts for the journey grid and articles create visual interest compared to standard 3-column layouts.
-  * **Interactive Tools**: Built fully functioning client-side tools (Due Date Calculator, Baby Names Finder).
+* **Typography**: Fraunces (headings, serif) paired with Plus Jakarta Sans (body, sans-serif).
+* **UI Features**: Liquid-glass tools bar, bento-style grids, subtle scroll-in animations, consistent 12px/20px/28px radius scale.
 
-## Implemented Pages
-1. **Homepage** (`/`): The core landing experience with a hero section, scrolling tools bar, interactive timeline, bento journey grid, articles, and community section.
-2. **Due Date Calculator** (`/due-date`): A functional calculator using Naegele's rule, displaying trimester, progress bar, and days left.
-3. **Baby Names** (`/baby-names`): An interactive database of 40 popular names with real-time text search, gender filtering, origin dropdown, and detailed meaning cards.
-4. **Pregnancy Week by Week** (`/pregnancy`): An interactive guide detailing baby's size and development for key weeks.
-5. **Getting Pregnant** (`/getting-pregnant`): An article/resource hub page.
+## Original site analysis
+Bounty.com (live site) suffers from: dense, ad-interrupted layouts; a legacy ASP.NET postback-driven nav; a registration flow bundled with five or more third-party marketing opt-ins; inconsistent visual hierarchy; and no visible design system. Its core value, genuinely useful tools and week-by-week content, is buried under clutter.
+
+This redesign keeps every core feature (due date calculator, ovulation calculator, baby name finder, week/month-by-week guides, articles, registration) and rebuilds the experience around a single clean visual system, with no ads and one honest sign-up form.
+
+## Implemented pages
+| Route | Purpose |
+|---|---|
+| `/` | Homepage: hero, tools bar, timeline, journey grid, articles, community, CTA |
+| `/getting-pregnant` | Topic hub + working ovulation calculator |
+| `/pregnancy` | Week-by-week guide (weeks 4-40) + diet, essentials, and birth-prep sections |
+| `/due-date` | Due date calculator (Naegele's rule), with input validation |
+| `/baby-names` | Searchable/filterable name database (40 names), deep-linkable by gender |
+| `/baby` | Month-by-month guide (1-12 months) + feeding and sleep sections |
+| `/toddler` | Month-by-month guide (12-24 months) + behaviour and activities sections |
+| `/preschool` | Topic overview for ages 2-4 |
+| `/family` | Topic overview: money, work, childcare, family life |
+| `/articles` + `/articles/[slug]` | Article index and four full original articles |
+| `/register`, `/login` | Demo auth forms (client-side only, clearly labelled as a demo) |
+| `/about`, `/contact` | About and contact pages |
+| `/privacy`, `/terms`, `/cookies`, `/accessibility` | Placeholder legal pages |
+
+Every navigation link, footer link, and in-page anchor resolves to a real destination. No dead `#` links remain in primary navigation.
+
+## Fixes made to the supplied build
+* `/baby-names?gender=boy` now actually filters by gender on load (was previously ignored).
+* Due date calculator now rejects future dates and dates over 42 weeks ago, with a clear message instead of silently showing negative numbers.
+* All six journey-grid cards, the full header mega-menu, and the footer now link to real pages (previously several were `#` or 404s).
+* The ovulation calculator, referenced from three places in the original build, is now a real, working tool.
+* Week/month timeline links from the homepage deep-link into the matching week or month on the destination page.
 
 ## How to run
-The dev server is running on `http://localhost:3000`. 
-Run `npm run dev` to start it again if it stops.
+```
+npm install
+npm run dev
+```
+Then open `http://localhost:3000`.
+
+To build for production:
+```
+npm run build
+npm start
+```

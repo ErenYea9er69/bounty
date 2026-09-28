@@ -45,7 +45,7 @@ const journeys = [
   {
     title: "Pre-school 2–4 years",
     desc: "Preparing for school, social skills, independence, and creative play.",
-    href: "#",
+    href: "/preschool",
     image: null,
     gradient: "from-[#d8e4f0] to-[#e8eff8]",
     size: "small",

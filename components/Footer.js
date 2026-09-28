@@ -23,19 +23,19 @@ const footerLinks = [
   {
     heading: "About",
     links: [
-      { label: "About Bounty", href: "#" },
-      { label: "Our history", href: "#" },
-      { label: "Contact us", href: "#" },
-      { label: "Advertise with us", href: "#" },
+      { label: "About Bounty", href: "/about" },
+      { label: "Family", href: "/family" },
+      { label: "Contact us", href: "/contact" },
+      { label: "Articles", href: "/articles" },
     ],
   },
   {
     heading: "Legal",
     links: [
-      { label: "Privacy policy", href: "#" },
-      { label: "Terms of use", href: "#" },
-      { label: "Cookie policy", href: "#" },
-      { label: "Accessibility", href: "#" },
+      { label: "Privacy policy", href: "/privacy" },
+      { label: "Terms of use", href: "/terms" },
+      { label: "Cookie policy", href: "/cookies" },
+      { label: "Accessibility", href: "/accessibility" },
     ],
   },
 ];

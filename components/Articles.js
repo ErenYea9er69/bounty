@@ -1,32 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-
-const articles = [
-  {
-    title: "Have you packed your hospital bag yet?",
-    desc: "Your go-to guide for everything you need to pack — from essentials for labour to the little comforts that make all the difference.",
-    tag: "Pregnancy",
-    read: "5 min read",
-    image: "/images/community.jpg",
-    featured: true,
-  },
-  {
-    title: "Top 5 baby hacks parents swear by",
-    desc: "Brilliant, parent-approved tricks to make life with your little one easier.",
-    tag: "Baby",
-    read: "3 min read",
-    image: "/images/newborn.jpg",
-    featured: false,
-  },
-  {
-    title: "10 joys of pregnancy you won't expect",
-    desc: "The surprising, heartwarming moments that catch you off guard.",
-    tag: "Wellbeing",
-    read: "4 min read",
-    image: "/images/hero-mother.jpg",
-    featured: false,
-  },
-];
+import { articles } from "@/lib/articles";
 
 export default function Articles() {
   const [featured, ...rest] = articles;
@@ -44,7 +18,7 @@ export default function Articles() {
             </p>
           </div>
           <Link
-            href="#"
+            href="/articles"
             className="hidden sm:inline-block text-sm font-semibold text-sage hover:text-sage-dark transition-colors"
           >
             View all articles
@@ -54,7 +28,7 @@ export default function Articles() {
         {/* Magazine layout */}
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-5">
           {/* Featured */}
-          <Link href="#" className="group lg:col-span-3 block rounded-2xl overflow-hidden bg-mist">
+          <Link href={`/articles/${featured.slug}`} className="group lg:col-span-3 block rounded-2xl overflow-hidden bg-mist">
             <div className="relative h-64 sm:h-80 lg:h-full lg:min-h-[400px] overflow-hidden">
               <Image
                 src={featured.image}
@@ -80,10 +54,10 @@ export default function Articles() {
 
           {/* Side articles */}
           <div className="lg:col-span-2 flex flex-col gap-5">
-            {rest.map((article) => (
+            {rest.slice(0, 2).map((article) => (
               <Link
-                key={article.title}
-                href="#"
+                key={article.slug}
+                href={`/articles/${article.slug}`}
                 className="group flex gap-4 bg-linen rounded-2xl overflow-hidden p-4 hover:shadow-sm transition-shadow"
               >
                 <div className="relative w-28 h-28 shrink-0 rounded-xl overflow-hidden">
@@ -110,7 +84,7 @@ export default function Articles() {
         </div>
 
         <Link
-          href="#"
+          href="/articles"
           className="sm:hidden block text-center text-sm font-semibold text-sage mt-6"
         >
           View all articles

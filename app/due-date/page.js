@@ -12,16 +12,27 @@ export default function DueDatePage() {
     e.preventDefault();
     if (!lastPeriod) return;
     const lmp = new Date(lastPeriod);
+    const today = new Date();
+
+    if (lmp > today) {
+      setResult({ error: "That date is in the future. Enter the first day of your last period." });
+      return;
+    }
+
     const due = new Date(lmp);
     due.setDate(due.getDate() + 280); // 40 weeks
 
-    const today = new Date();
     const diffMs = today - lmp;
     const diffWeeks = Math.floor(diffMs / (1000 * 60 * 60 * 24 * 7));
     const diffDays = Math.floor((diffMs / (1000 * 60 * 60 * 24)) % 7);
     const trimester = diffWeeks < 13 ? 1 : diffWeeks < 27 ? 2 : 3;
 
     const daysLeft = Math.ceil((due - today) / (1000 * 60 * 60 * 24));
+
+    if (diffWeeks > 42) {
+      setResult({ error: "That's over 42 weeks ago. Double-check the date, or speak with your midwife." });
+      return;
+    }
 
     setResult({
       dueDate: due.toLocaleDateString("en-GB", { weekday: "long", day: "numeric", month: "long", year: "numeric" }),
@@ -55,6 +66,7 @@ export default function DueDatePage() {
                 id="lmp"
                 value={lastPeriod}
                 onChange={(e) => setLastPeriod(e.target.value)}
+                max={new Date().toISOString().split("T")[0]}
                 className="w-full h-12 px-4 border-2 border-mist rounded-xl bg-white text-ink text-sm focus:border-sage focus:outline-none transition-colors"
                 required
               />
@@ -71,7 +83,12 @@ export default function DueDatePage() {
         </form>
 
         {/* Results */}
-        {result && (
+        {result?.error && (
+          <div className="bg-peach-light border border-peach/30 rounded-2xl px-6 py-4 text-sm text-ink">
+            {result.error}
+          </div>
+        )}
+        {result && !result.error && (
           <div className="space-y-6">
             {/* Main result */}
             <div className="bg-sage/5 border border-sage/15 rounded-2xl p-8">

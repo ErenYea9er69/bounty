@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 
 const weeklyGuide = [
@@ -22,6 +22,18 @@ const weeklyGuide = [
 
 export default function PregnancyPage() {
   const [activeWeek, setActiveWeek] = useState(12);
+
+  useEffect(() => {
+    const hash = window.location.hash;
+    const match = hash.match(/week-(\d+)/);
+    if (match) {
+      const w = Number(match[1]);
+      const nearest = weeklyGuide
+        .map((g) => g.week)
+        .reduce((prev, curr) => (Math.abs(curr - w) < Math.abs(prev - w) ? curr : prev), weeklyGuide[0].week);
+      setActiveWeek(nearest);
+    }
+  }, []);
 
   const current = weeklyGuide.find((w) => w.week === activeWeek) || weeklyGuide[0];
 
@@ -48,14 +60,15 @@ export default function PregnancyPage() {
         </div>
       </div>
 
-      <div className="max-w-5xl mx-auto px-5">
+      <div id="week-by-week" className="max-w-5xl mx-auto px-5 scroll-mt-24">
         {/* Week selector */}
         <div className="flex flex-wrap gap-2 mb-10">
           {weeklyGuide.map((w) => (
             <button
               key={w.week}
+              id={`week-${w.week}`}
               onClick={() => setActiveWeek(w.week)}
-              className={`w-12 h-12 rounded-xl text-sm font-semibold transition-all ${
+              className={`w-12 h-12 rounded-xl text-sm font-semibold transition-all scroll-mt-24 ${
                 activeWeek === w.week
                   ? "bg-sage text-white shadow-md scale-105"
                   : "bg-white border border-mist text-slate hover:border-sage/40 hover:text-ink"
@@ -109,6 +122,39 @@ export default function PregnancyPage() {
             </div>
           </div>
         </div>
+      </div>
+
+      {/* Additional guidance sections */}
+      <div className="max-w-3xl mx-auto px-5 mt-20 space-y-16">
+        <section id="health" className="scroll-mt-24">
+          <h2 className="font-heading text-2xl text-ink mb-4">Diet and health in pregnancy</h2>
+          <p className="text-slate leading-relaxed mb-4">
+            Eating well in pregnancy is less about strict rules and more about balance. Aim for a mix of fruit and vegetables, whole grains, protein, and calcium-rich foods, and keep folic acid and vitamin D supplements going as advised by your midwife.
+          </p>
+          <p className="text-slate leading-relaxed">
+            Some foods are best avoided, including unpasteurised soft cheeses, raw or undercooked eggs and meat, and high-mercury fish like shark or swordfish. Keep caffeine to around 200mg a day, roughly two mugs of instant coffee, and stay well hydrated throughout the day.
+          </p>
+        </section>
+
+        <section id="essentials" className="scroll-mt-24">
+          <h2 className="font-heading text-2xl text-ink mb-4">Baby essentials checklist</h2>
+          <p className="text-slate leading-relaxed mb-4">
+            You need far less than the shops suggest. The genuine essentials are a safe place for baby to sleep, a car seat if you are driving home, five to seven sleepsuits and vests, nappies, and a few soft muslins.
+          </p>
+          <p className="text-slate leading-relaxed">
+            Everything else, from bottle sterilisers to changing tables, can wait until you know your baby's routine and what actually suits your home. Borrowing or buying second-hand for the early months is a popular, sensible way to save money on things you will outgrow quickly.
+          </p>
+        </section>
+
+        <section id="birth" className="scroll-mt-24">
+          <h2 className="font-heading text-2xl text-ink mb-4">Birth preparation</h2>
+          <p className="text-slate leading-relaxed mb-4">
+            A birth plan is less a fixed script and more a way to think through your preferences, pain relief options, who you want with you, and how you feel about interventions, so your midwife and birth partner understand what matters to you.
+          </p>
+          <p className="text-slate leading-relaxed">
+            Antenatal classes, whether run by the hospital or independently, are a good way to build confidence, learn breathing and positioning techniques, and meet other parents due around the same time as you.
+          </p>
+        </section>
       </div>
     </div>
   );

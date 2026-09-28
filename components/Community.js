@@ -49,7 +49,7 @@ export default function Community() {
               ))}
             </ul>
             <Link
-              href="#"
+              href="/about"
               className="inline-flex items-center h-11 px-6 border-2 border-ink/15 text-ink font-semibold rounded-full hover:bg-ink/5 transition-colors text-sm"
             >
               Learn more about Bounty

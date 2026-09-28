@@ -1,6 +1,7 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect, Suspense } from "react";
+import { useSearchParams } from "next/navigation";
 
 const allNames = [
   // Boys
@@ -49,11 +50,20 @@ const allNames = [
 
 const origins = [...new Set(allNames.map((n) => n.origin))].sort();
 
-export default function BabyNamesPage() {
+function BabyNamesContent() {
+  const searchParams = useSearchParams();
+  const initialGender = searchParams.get("gender");
   const [search, setSearch] = useState("");
-  const [gender, setGender] = useState("all");
+  const [gender, setGender] = useState(
+    initialGender === "boy" || initialGender === "girl" ? initialGender : "all"
+  );
   const [origin, setOrigin] = useState("all");
   const [selectedName, setSelectedName] = useState(null);
+
+  useEffect(() => {
+    const g = searchParams.get("gender");
+    if (g === "boy" || g === "girl") setGender(g);
+  }, [searchParams]);
 
   const filtered = useMemo(() => {
     return allNames
@@ -188,5 +198,13 @@ export default function BabyNamesPage() {
         )}
       </div>
     </div>
+  );
+}
+
+export default function BabyNamesPage() {
+  return (
+    <Suspense fallback={null}>
+      <BabyNamesContent />
+    </Suspense>
   );
 }
