@@ -34,6 +34,11 @@ This redesign keeps every core feature (due date calculator, ovulation calculato
 | `/family` | Topic overview: money, work, childcare, family life |
 | `/articles` + `/articles/[slug]` | Article index and four full original articles |
 | `/register`, `/login` | Demo auth forms (client-side only, clearly labelled as a demo) |
+| `/checklist` | Interactive hospital bag and baby essentials checklist, saved on the device |
+| `/support` | Miscarriage and baby loss support with trusted charities |
+| `/search` | Site search across tools, guides and articles |
+| `/guides`, `/guides/[slug]` | Ten data-driven guides in `lib/guides.js`: name styles, weaning, safer sleep, postnatal depression, immunisations, family illness |
+| `/app`, `/press` | App features with store links, and press enquiries |
 | `/about`, `/contact` | About and contact pages |
 | `/privacy`, `/terms`, `/cookies`, `/accessibility` | Placeholder legal pages |
 

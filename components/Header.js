@@ -22,6 +22,8 @@ const navItems = [
       { label: "Due date calculator", href: "/due-date" },
       { label: "Diet and health", href: "/pregnancy#health" },
       { label: "Birth preparation", href: "/pregnancy#birth" },
+      { label: "Hospital bag checklist", href: "/checklist" },
+      { label: "Miscarriage and loss", href: "/support" },
     ],
   },
   {
@@ -31,6 +33,10 @@ const navItems = [
       { label: "Name finder", href: "/baby-names" },
       { label: "Boys' name trends", href: "/baby-names?gender=boy" },
       { label: "Girls' name trends", href: "/baby-names?gender=girl" },
+      { label: "Regional names", href: "/guides/regional-baby-names" },
+      { label: "Names by origin", href: "/guides/baby-name-origins" },
+      { label: "Celebrity names", href: "/guides/celebrity-baby-names" },
+      { label: "Name trends", href: "/guides/baby-name-trends" },
     ],
   },
   {
@@ -40,6 +46,9 @@ const navItems = [
       { label: "Month by month", href: "/baby#milestones" },
       { label: "Feeding", href: "/baby#feeding" },
       { label: "Sleep", href: "/baby#sleep" },
+      { label: "Weaning", href: "/guides/weaning" },
+      { label: "Safer sleep", href: "/guides/safer-sleep" },
+      { label: "Postnatal depression", href: "/guides/postnatal-depression" },
     ],
   },
   {
@@ -49,9 +58,14 @@ const navItems = [
       { label: "Development stages", href: "/toddler#development" },
       { label: "Behaviour", href: "/toddler#behaviour" },
       { label: "Activities", href: "/toddler#activities" },
+      { label: "Immunisations", href: "/guides/toddler-immunisations" },
     ],
   },
-  { label: "Family", href: "/family" },
+  { label: "Family", href: "/family", children: [
+    { label: "Family overview", href: "/family" },
+    { label: "A to Z of family illness", href: "/guides/family-illness-a-z" },
+    { label: "All guides", href: "/guides" },
+  ] },
 ];
 
 export default function Header() {
@@ -163,22 +177,22 @@ export default function Header() {
         {searchOpen && (
           <div className="border-t border-mist/60 bg-white/90 backdrop-blur-xl">
             <div className="max-w-2xl mx-auto px-5 py-4">
-              <div className="flex items-center gap-3 bg-mist rounded-xl px-4 py-3">
+              <form role="search" action="/search" className="flex items-center gap-3 bg-mist rounded-xl px-4 py-3">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-slate shrink-0"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
                 <input
                   type="search"
+                  name="q"
                   placeholder="Search pregnancy tips, baby names, articles..."
                   className="flex-1 bg-transparent text-sm outline-none placeholder:text-slate/60"
                   autoFocus
                 />
-                <button
-                  onClick={() => setSearchOpen(false)}
+                <button type="button" onClick={() => setSearchOpen(false)}
                   className="text-slate hover:text-ink"
                   aria-label="Close search"
                 >
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
                 </button>
-              </div>
+              </form>
             </div>
           </div>
         )}
