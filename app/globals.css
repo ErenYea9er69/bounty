@@ -107,6 +107,14 @@
     pointer-events: none;
     mix-blend-mode: screen;
   }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
 }
 
 /* ─── Skip Link ──────────────────────────────────── */

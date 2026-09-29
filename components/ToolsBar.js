@@ -80,12 +80,12 @@ export default function ToolsBar() {
       {/* Sage gradient strip behind the glass cards */}
       <div className="absolute inset-x-0 top-6 bottom-0 bg-gradient-to-r from-sage/10 via-sage/20 to-sage/10 rounded-none" />
       <div className="relative max-w-7xl mx-auto px-5" ref={stripRef}>
-        <div className="flex gap-3 overflow-x-auto pb-4 pt-2 scrollbar-hide snap-x snap-mandatory">
+        <div className="flex md:justify-center gap-4 md:gap-6 overflow-x-auto pb-6 pt-2 scrollbar-hide snap-x snap-mandatory">
           {tools.map((tool, i) => (
             <Link
               key={tool.label}
               href={tool.href}
-              className={`group shrink-0 snap-start flex flex-col items-center gap-3 w-40 py-6 px-4 rounded-2xl glass-light glass-sheen transition-all duration-300 hover:scale-[1.03] hover:shadow-md ${
+              className={`group shrink-0 snap-start flex flex-col items-center gap-3 w-36 sm:w-40 py-6 px-4 rounded-2xl glass-light glass-sheen transition-all duration-300 hover:scale-[1.03] hover:shadow-md ${
                 visible
                   ? "opacity-100 translate-y-0"
                   : "opacity-0 translate-y-4"
