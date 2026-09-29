@@ -29,7 +29,7 @@ export default function ToddlerPage() {
     <div className="pt-24 pb-20">
       {/* Hero */}
       <div className="relative h-64 sm:h-80 overflow-hidden mb-12">
-        <Image src="/images/community.jpg" alt="" fill priority className="object-cover" aria-hidden="true" />
+        <Image src="/images/toddler.jpg" alt="Toddler playing with wooden toys" fill priority className="object-cover" aria-hidden="true" />
         <div className="absolute inset-0 bg-gradient-to-t from-linen via-linen/60 to-transparent" />
         <div className="absolute bottom-0 left-0 right-0 max-w-5xl mx-auto px-5 pb-8">
           <h1 className="font-heading text-3xl sm:text-4xl text-ink mb-2">Toddler, 1 to 2 years</h1>

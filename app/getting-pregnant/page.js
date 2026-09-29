@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 
 const topics = [
   { title: "Before you begin", anchor: "before", icon: "💊" },
@@ -46,13 +47,28 @@ export default function GettingPregnantPage() {
   return (
     <div className="pt-24 pb-20">
       {/* Hero */}
+      <div className="relative h-64 sm:h-80 overflow-hidden mb-12">
+        <Image
+          src="/images/getting-pregnant.jpg"
+          alt="Couple on couch with gentle hopeful smiles"
+          fill
+          priority
+          className="object-cover"
+          aria-hidden="true"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-linen via-linen/60 to-transparent" />
+        <div className="absolute bottom-0 left-0 right-0 max-w-5xl mx-auto px-5 pb-8">
+          <h1 className="font-heading text-3xl sm:text-4xl text-ink mb-2">
+            Getting pregnant
+          </h1>
+          <p className="text-slate text-base max-w-lg">
+            Whether you're just starting to think about it or you've been trying for a while, we're here with practical advice and support.
+          </p>
+        </div>
+      </div>
+
+      {/* Topics */}
       <div className="max-w-5xl mx-auto px-5 mb-16">
-        <h1 className="font-heading text-3xl sm:text-4xl text-ink mb-3">
-          Getting pregnant
-        </h1>
-        <p className="text-slate text-base max-w-lg mb-10">
-          Whether you're just starting to think about it or you've been trying for a while, we're here with practical advice and support.
-        </p>
 
         {/* Topics grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">

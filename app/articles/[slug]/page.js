@@ -7,8 +7,9 @@ export function generateStaticParams() {
   return articles.map((a) => ({ slug: a.slug }));
 }
 
-export function generateMetadata({ params }) {
-  const article = getArticleBySlug(params.slug);
+export async function generateMetadata({ params }) {
+  const { slug } = await params;
+  const article = getArticleBySlug(slug);
   if (!article) return {};
   return {
     title: `${article.title} — Bounty`,
@@ -16,8 +17,9 @@ export function generateMetadata({ params }) {
   };
 }
 
-export default function ArticlePage({ params }) {
-  const article = getArticleBySlug(params.slug);
+export default async function ArticlePage({ params }) {
+  const { slug } = await params;
+  const article = getArticleBySlug(slug);
   if (!article) notFound();
 
   const more = articles.filter((a) => a.slug !== article.slug).slice(0, 3);

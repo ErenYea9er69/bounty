@@ -2,6 +2,7 @@
 
 import { useState, useMemo, useEffect, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
+import Image from "next/image";
 
 const allNames = [
   // Boys
@@ -78,13 +79,28 @@ function BabyNamesContent() {
 
   return (
     <div className="pt-24 pb-20">
+      {/* Hero */}
+      <div className="relative h-64 sm:h-80 overflow-hidden mb-12">
+        <Image
+          src="/images/baby-names.jpg"
+          alt="Wooden alphabet letter blocks spelling baby names"
+          fill
+          priority
+          className="object-cover"
+          aria-hidden="true"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-linen via-linen/60 to-transparent" />
+        <div className="absolute bottom-0 left-0 right-0 max-w-5xl mx-auto px-5 pb-8">
+          <h1 className="font-heading text-3xl sm:text-4xl text-ink mb-2">
+            Baby name finder
+          </h1>
+          <p className="text-slate text-base max-w-lg">
+            Explore thousands of baby names, find their meanings, and discover the perfect name for your little one.
+          </p>
+        </div>
+      </div>
+
       <div className="max-w-5xl mx-auto px-5">
-        <h1 className="font-heading text-3xl sm:text-4xl text-ink mb-3">
-          Baby name finder
-        </h1>
-        <p className="text-slate text-base mb-10 max-w-lg">
-          Explore thousands of baby names, find their meanings, and discover the perfect name for your little one.
-        </p>
 
         {/* Filters */}
         <div className="flex flex-wrap gap-3 mb-8">

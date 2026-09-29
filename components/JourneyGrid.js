@@ -6,8 +6,8 @@ const journeys = [
     title: "Getting Pregnant",
     desc: "Fertility advice, ovulation tracking, and what to expect when you're trying to conceive.",
     href: "/getting-pregnant",
-    image: null,
-    gradient: "from-[#e8d5ef] to-[#f0e0f6]",
+    image: "/images/getting-pregnant.jpg",
+    gradient: null,
     size: "small",
   },
   {
@@ -22,8 +22,8 @@ const journeys = [
     title: "Baby Names",
     desc: "Thousands of names to explore — trending lists, meanings, and origin filters.",
     href: "/baby-names",
-    image: null,
-    gradient: "from-[#fde8d0] to-[#fef1e1]",
+    image: "/images/baby-names.jpg",
+    gradient: null,
     size: "small",
   },
   {
@@ -38,16 +38,16 @@ const journeys = [
     title: "Toddler 1–2 years",
     desc: "Developmental leaps, behavioural guidance, and activities for curious minds.",
     href: "/toddler",
-    image: null,
-    gradient: "from-[#d5e8de] to-[#e4f1e8]",
+    image: "/images/toddler.jpg",
+    gradient: null,
     size: "small",
   },
   {
     title: "Pre-school 2–4 years",
     desc: "Preparing for school, social skills, independence, and creative play.",
     href: "/preschool",
-    image: null,
-    gradient: "from-[#d8e4f0] to-[#e8eff8]",
+    image: "/images/preschool.jpg",
+    gradient: null,
     size: "small",
   },
 ];
@@ -69,14 +69,14 @@ export default function JourneyGrid() {
             <Link
               key={item.title}
               href={item.href}
-              className={`relative group block rounded-2xl overflow-hidden transition-transform duration-200 hover:scale-[1.02] ${
+              className={`relative group block rounded-2xl overflow-hidden transition-transform duration-200 hover:scale-[1.02] shadow-sm hover:shadow-md ${
                 item.size === "large" ? "sm:col-span-2 lg:col-span-1 lg:row-span-2" : ""
               }`}
             >
               {/* Image or gradient */}
               <div
                 className={`relative overflow-hidden ${
-                  item.size === "large" ? "h-64 lg:h-full lg:min-h-[380px]" : "h-40"
+                  item.size === "large" ? "h-72 sm:h-80 lg:h-full lg:min-h-[440px]" : "h-52 sm:h-56"
                 } ${
                   item.gradient
                     ? `bg-gradient-to-br ${item.gradient}`
@@ -95,7 +95,7 @@ export default function JourneyGrid() {
                 )}
                 {/* Overlay for text legibility on images */}
                 {item.image && (
-                  <div className="absolute inset-0 bg-gradient-to-t from-ink/60 via-ink/10 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/35 to-transparent" />
                 )}
               </div>
               {/* Body */}
