@@ -143,15 +143,38 @@ export default function Header() {
             ))}
           </nav>
 
-          {/* Actions */}
-          <div className="flex items-center gap-3">
-            <button
-              onClick={() => setSearchOpen(!searchOpen)}
-              className="p-2 rounded-lg hover:bg-mist/60 text-slate hover:text-ink transition-colors"
-              aria-label="Search"
+                    {/* Actions */}
+          <div className="flex items-center gap-2 sm:gap-3">
+            <div 
+              className={`relative flex items-center h-10 transition-all duration-300 ease-out overflow-hidden rounded-full ${
+                searchOpen ? "w-48 sm:w-64 bg-mist shadow-inner" : "w-10 bg-transparent hover:bg-mist/60"
+              }`}
             >
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-            </button>
+              <button
+                type="button"
+                onClick={() => setSearchOpen(!searchOpen)}
+                className="absolute left-0 top-0 bottom-0 w-10 flex items-center justify-center text-slate hover:text-ink z-10 transition-colors"
+                aria-label={searchOpen ? "Close search" : "Open search"}
+              >
+                {searchOpen ? (
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                ) : (
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                )}
+              </button>
+              
+              <form role="search" action="/search" className="flex-1 flex items-center w-full h-full pl-10 pr-4" onSubmit={(e) => { if(!searchOpen) e.preventDefault(); }}>
+                <input
+                  type="search"
+                  name="q"
+                  placeholder="Search..."
+                  className={`w-full bg-transparent text-sm text-ink outline-none placeholder:text-slate/60 transition-opacity duration-300 ${
+                    searchOpen ? "opacity-100" : "opacity-0 pointer-events-none"
+                  }`}
+                  tabIndex={searchOpen ? 0 : -1}
+                />
+              </form>
+            </div>
             <Link
               href="/login"
               className="hidden md:inline-block text-sm font-medium text-slate hover:text-ink transition-colors"
@@ -174,20 +197,7 @@ export default function Header() {
           </div>
         </div>
 
-        {/* Search bar */}
-        {searchOpen && (
-          <div className="border-t border-mist/60 bg-white/90 backdrop-blur-xl">
-            <div className="max-w-2xl mx-auto px-5 py-4">
-              <form role="search" action="/search" className="flex items-center gap-3 bg-mist rounded-xl px-4 py-3">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-slate shrink-0"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-                <input
-                  type="search"
-                  name="q"
-                  placeholder="Search pregnancy tips, baby names, articles..."
-                  className="flex-1 bg-transparent text-sm outline-none placeholder:text-slate/60"
-                  autoFocus
-                />
-                <button type="button" onClick={() => setSearchOpen(false)}
+        
                   className="text-slate hover:text-ink"
                   aria-label="Close search"
                 >
