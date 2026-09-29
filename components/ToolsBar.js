@@ -78,7 +78,7 @@ export default function ToolsBar() {
   return (
     <section className="relative py-8 bg-gradient-to-r from-sage/10 via-sage/20 to-sage/10 z-10">
       <div className="relative max-w-7xl mx-auto px-5" ref={stripRef}>
-        <div className="flex md:justify-center gap-4 md:gap-6 overflow-x-auto pb-6 pt-2 scrollbar-hide snap-x snap-mandatory">
+        <div className="flex justify-start gap-4 md:gap-6 overflow-x-auto pb-6 pt-2 scrollbar-hide snap-x snap-mandatory">
           {tools.map((tool, i) => (
             <Link
               key={tool.label}
