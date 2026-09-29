@@ -17,7 +17,7 @@ export default function AppPage() {
         <p className="text-slate text-lg mb-8">Personal support from your first scan to your baby's first steps.</p>
         <div className="flex flex-wrap gap-3 mb-12">
           <a href="https://link.bounty.com/WCcV/17vguIq0uK" target="_blank" rel="noopener noreferrer" className="bg-ink text-white px-6 py-3 rounded-full font-medium hover:bg-ink/85 transition-colors">Download on the App Store</a>
-          <a href="https://link.bounty.com/WCcV/X6jtgqV0uK" target="_blank" rel="noopener noreferrer" className="bg-sage text-white px-6 py-3 rounded-full font-medium hover:bg-sage-dark transition-colors">Get it on Google Play</a>
+          <a href="https://link.bounty.com/WCcV/X6jtgqV0uK" target="_blank" rel="noopener noreferrer" className="bg-blue text-white px-6 py-3 rounded-full font-medium hover:bg-blue-dark transition-colors">Get it on Google Play</a>
         </div>
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {features.map(([t, d]) => (

@@ -70,8 +70,8 @@ export default function PregnancyPage() {
               onClick={() => setActiveWeek(w.week)}
               className={`w-12 h-12 rounded-xl text-sm font-semibold transition-all scroll-mt-24 ${
                 activeWeek === w.week
-                  ? "bg-sage text-white shadow-md scale-105"
-                  : "bg-white border border-mist text-slate hover:border-sage/40 hover:text-ink"
+                  ? "bg-blue text-white shadow-md scale-105"
+                  : "bg-white border border-mist text-slate hover:border-blue/40 hover:text-ink"
               }`}
             >
               {w.week}
@@ -82,8 +82,8 @@ export default function PregnancyPage() {
         {/* Detail */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Size card */}
-          <div className="bg-sage/5 border border-sage/15 rounded-2xl p-8 text-center flex flex-col items-center justify-center">
-            <p className="text-xs text-sage font-semibold mb-2">Week {current.week}</p>
+          <div className="bg-blue/5 border border-blue/15 rounded-2xl p-8 text-center flex flex-col items-center justify-center">
+            <p className="text-xs text-blue font-semibold mb-2">Week {current.week}</p>
             <h2 className="font-heading text-4xl text-ink font-medium mb-1">{current.size}</h2>
             <p className="text-sm text-slate">About {current.length} long</p>
           </div>
@@ -103,7 +103,7 @@ export default function PregnancyPage() {
                     const idx = weeklyGuide.findIndex((w) => w.week === activeWeek);
                     if (idx > 0) setActiveWeek(weeklyGuide[idx - 1].week);
                   }}
-                  className="h-10 px-5 border border-mist rounded-lg text-sm font-medium text-slate hover:text-ink hover:border-sage/30 transition-colors"
+                  className="h-10 px-5 border border-mist rounded-lg text-sm font-medium text-slate hover:text-ink hover:border-blue/30 transition-colors"
                 >
                   Previous week
                 </button>
@@ -114,7 +114,7 @@ export default function PregnancyPage() {
                     const idx = weeklyGuide.findIndex((w) => w.week === activeWeek);
                     if (idx < weeklyGuide.length - 1) setActiveWeek(weeklyGuide[idx + 1].week);
                   }}
-                  className="h-10 px-5 bg-sage hover:bg-sage-dark text-white rounded-lg text-sm font-medium transition-colors"
+                  className="h-10 px-5 bg-blue hover:bg-blue-dark text-white rounded-lg text-sm font-medium transition-colors"
                 >
                   Next week
                 </button>

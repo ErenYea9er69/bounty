@@ -76,10 +76,10 @@ export default function GettingPregnantPage() {
             <a
               key={topic.title}
               href={`#${topic.anchor}`}
-              className="group block bg-white border border-mist rounded-2xl p-6 hover:border-sage/30 hover:shadow-sm transition-all"
+              className="group block bg-white border border-mist rounded-2xl p-6 hover:border-blue/30 hover:shadow-sm transition-all"
             >
               <span className="text-2xl mb-3 block">{topic.icon}</span>
-              <h3 className="font-heading text-base font-medium text-ink mb-2 group-hover:text-sage transition-colors">
+              <h3 className="font-heading text-base font-medium text-ink mb-2 group-hover:text-blue transition-colors">
                 {topic.title}
               </h3>
             </a>

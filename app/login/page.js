@@ -26,7 +26,7 @@ export default function LoginPage() {
               id="email"
               type="email"
               required
-              className="w-full h-12 px-4 border-2 border-mist rounded-xl bg-white text-sm focus:border-sage focus:outline-none transition-colors"
+              className="w-full h-12 px-4 border-2 border-mist rounded-xl bg-white text-sm focus:border-blue focus:outline-none transition-colors"
             />
           </div>
           <div>
@@ -35,7 +35,7 @@ export default function LoginPage() {
               <button
                 type="button"
                 onClick={() => setError(true)}
-                className="text-xs font-semibold text-sage hover:text-sage-dark transition-colors"
+                className="text-xs font-semibold text-blue hover:text-blue-dark transition-colors"
               >
                 Forgot password?
               </button>
@@ -44,7 +44,7 @@ export default function LoginPage() {
               id="password"
               type="password"
               required
-              className="w-full h-12 px-4 border-2 border-mist rounded-xl bg-white text-sm focus:border-sage focus:outline-none transition-colors"
+              className="w-full h-12 px-4 border-2 border-mist rounded-xl bg-white text-sm focus:border-blue focus:outline-none transition-colors"
             />
           </div>
 
@@ -57,7 +57,7 @@ export default function LoginPage() {
 
           <button
             type="submit"
-            className="w-full h-12 bg-sage hover:bg-sage-dark text-white font-semibold rounded-xl transition-colors text-sm"
+            className="w-full h-12 bg-blue hover:bg-blue-dark text-white font-semibold rounded-xl transition-colors text-sm"
           >
             Log in
           </button>
@@ -65,7 +65,7 @@ export default function LoginPage() {
 
         <p className="text-sm text-slate text-center mt-6">
           New to Bounty?{" "}
-          <Link href="/register" className="font-semibold text-sage hover:text-sage-dark transition-colors">
+          <Link href="/register" className="font-semibold text-blue hover:text-blue-dark transition-colors">
             Join free
           </Link>
         </p>

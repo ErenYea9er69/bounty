@@ -106,7 +106,7 @@ function BabyNamesContent() {
         <div className="flex flex-wrap gap-3 mb-8">
           {/* Search */}
           <div className="flex-1 min-w-56">
-            <div className="flex items-center gap-2 h-11 px-4 bg-white border-2 border-mist rounded-xl focus-within:border-sage transition-colors">
+            <div className="flex items-center gap-2 h-11 px-4 bg-white border-2 border-mist rounded-xl focus-within:border-blue transition-colors">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-slate shrink-0"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
               <input
                 type="text"
@@ -137,7 +137,7 @@ function BabyNamesContent() {
           <select
             value={origin}
             onChange={(e) => setOrigin(e.target.value)}
-            className="h-11 px-4 bg-white border-2 border-mist rounded-xl text-sm text-ink focus:border-sage outline-none transition-colors"
+            className="h-11 px-4 bg-white border-2 border-mist rounded-xl text-sm text-ink focus:border-blue outline-none transition-colors"
           >
             <option value="all">All origins</option>
             {origins.map((o) => (
@@ -157,8 +157,8 @@ function BabyNamesContent() {
               onClick={() => setSelectedName(selectedName?.name === n.name && selectedName?.gender === n.gender ? null : n)}
               className={`text-left p-4 rounded-xl border transition-all ${
                 selectedName?.name === n.name && selectedName?.gender === n.gender
-                  ? "border-sage bg-sage/5 shadow-sm"
-                  : "border-mist bg-white hover:border-sage/30 hover:shadow-sm"
+                  ? "border-blue bg-blue/5 shadow-sm"
+                  : "border-mist bg-white hover:border-blue/30 hover:shadow-sm"
               }`}
             >
               <div className="flex items-center justify-between mb-1">
@@ -180,7 +180,7 @@ function BabyNamesContent() {
 
         {/* Selected name detail */}
         {selectedName && (
-          <div className="bg-white border border-sage/20 rounded-2xl p-6 shadow-sm">
+          <div className="bg-white border border-blue/20 rounded-2xl p-6 shadow-sm">
             <div className="flex items-start justify-between mb-4">
               <div>
                 <h2 className="font-heading text-2xl font-medium text-ink">{selectedName.name}</h2>

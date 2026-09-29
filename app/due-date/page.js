@@ -67,14 +67,14 @@ export default function DueDatePage() {
                 value={lastPeriod}
                 onChange={(e) => setLastPeriod(e.target.value)}
                 max={new Date().toISOString().split("T")[0]}
-                className="w-full h-12 px-4 border-2 border-mist rounded-xl bg-white text-ink text-sm focus:border-sage focus:outline-none transition-colors"
+                className="w-full h-12 px-4 border-2 border-mist rounded-xl bg-white text-ink text-sm focus:border-blue focus:outline-none transition-colors"
                 required
               />
             </div>
             <div className="sm:self-end">
               <button
                 type="submit"
-                className="w-full sm:w-auto h-12 px-8 bg-sage hover:bg-sage-dark text-white font-semibold rounded-xl transition-colors text-sm"
+                className="w-full sm:w-auto h-12 px-8 bg-blue hover:bg-blue-dark text-white font-semibold rounded-xl transition-colors text-sm"
               >
                 Calculate
               </button>
@@ -91,8 +91,8 @@ export default function DueDatePage() {
         {result && !result.error && (
           <div className="space-y-6">
             {/* Main result */}
-            <div className="bg-sage/5 border border-sage/15 rounded-2xl p-8">
-              <p className="text-sm text-sage font-semibold mb-1">Your estimated due date</p>
+            <div className="bg-blue/5 border border-blue/15 rounded-2xl p-8">
+              <p className="text-sm text-blue font-semibold mb-1">Your estimated due date</p>
               <h2 className="font-heading text-2xl sm:text-3xl text-ink font-medium mb-6">
                 {result.dueDate}
               </h2>
@@ -103,9 +103,9 @@ export default function DueDatePage() {
                   <span>Conception</span>
                   <span>Due date</span>
                 </div>
-                <div className="h-3 bg-sage/10 rounded-full overflow-hidden">
+                <div className="h-3 bg-blue/10 rounded-full overflow-hidden">
                   <div
-                    className="h-full bg-sage rounded-full transition-all duration-700"
+                    className="h-full bg-blue rounded-full transition-all duration-700"
                     style={{ width: `${result.progress}%` }}
                   />
                 </div>

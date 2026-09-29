@@ -54,7 +54,7 @@ export default async function GuidePage({ params }) {
           <p className="text-sm text-slate mb-10">
             Read more:{" "}
             {g.links.map(([l, u]) => (
-              <a key={u} href={u} target="_blank" rel="noopener noreferrer" className="underline text-sage-dark mr-3">{l}</a>
+              <a key={u} href={u} target="_blank" rel="noopener noreferrer" className="underline text-blue-dark mr-3">{l}</a>
             ))}
           </p>
         )}
@@ -64,7 +64,7 @@ export default async function GuidePage({ params }) {
             <h2 className="font-heading text-lg text-ink mb-3">More in {g.group}</h2>
             <ul className="space-y-2">
               {more.map((m) => (
-                <li key={m.slug}><Link href={`/guides/${m.slug}`} className="text-sage-dark underline underline-offset-4">{m.title}</Link></li>
+                <li key={m.slug}><Link href={`/guides/${m.slug}`} className="text-blue-dark underline underline-offset-4">{m.title}</Link></li>
               ))}
             </ul>
           </div>

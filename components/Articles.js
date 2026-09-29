@@ -19,7 +19,7 @@ export default function Articles() {
           </div>
           <Link
             href="/articles"
-            className="hidden sm:inline-block text-sm font-semibold text-sage hover:text-sage-dark transition-colors"
+            className="hidden sm:inline-block text-sm font-semibold text-blue hover:text-blue-dark transition-colors"
           >
             View all articles
           </Link>
@@ -40,7 +40,7 @@ export default function Articles() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-ink/70 via-ink/20 to-transparent" />
               <div className="absolute bottom-0 left-0 right-0 p-6">
-                <span className="inline-block px-3 py-1 text-xs font-semibold text-white bg-sage rounded-full mb-3">
+                <span className="inline-block px-3 py-1 text-xs font-semibold text-white bg-blue rounded-full mb-3">
                   {featured.tag}
                 </span>
                 <h3 className="font-heading text-xl sm:text-2xl text-white font-medium mb-2">
@@ -71,7 +71,7 @@ export default function Articles() {
                   />
                 </div>
                 <div className="flex flex-col justify-center min-w-0">
-                  <span className="text-xs font-semibold text-sage mb-1">{article.tag}</span>
+                  <span className="text-xs font-semibold text-blue mb-1">{article.tag}</span>
                   <h3 className="font-heading text-base font-medium text-ink mb-1 line-clamp-2">
                     {article.title}
                   </h3>
@@ -85,7 +85,7 @@ export default function Articles() {
 
         <Link
           href="/articles"
-          className="sm:hidden block text-center text-sm font-semibold text-sage mt-6"
+          className="sm:hidden block text-center text-sm font-semibold text-blue mt-6"
         >
           View all articles
         </Link>

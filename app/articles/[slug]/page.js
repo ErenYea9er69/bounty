@@ -38,7 +38,7 @@ export default async function ArticlePage({ params }) {
         />
         <div className="absolute inset-0 bg-gradient-to-t from-ink/70 via-ink/10 to-transparent" />
         <div className="absolute bottom-0 left-0 right-0 max-w-3xl mx-auto px-5 pb-8">
-          <span className="inline-block px-3 py-1 text-xs font-semibold text-white bg-sage rounded-full mb-3">
+          <span className="inline-block px-3 py-1 text-xs font-semibold text-white bg-blue rounded-full mb-3">
             {article.tag}
           </span>
           <h1 className="font-heading text-2xl sm:text-4xl text-white font-medium leading-tight">
@@ -49,7 +49,7 @@ export default async function ArticlePage({ params }) {
       </div>
 
       <div className="max-w-3xl mx-auto px-5">
-        <Link href="/articles" className="text-sm font-semibold text-sage hover:text-sage-dark transition-colors">
+        <Link href="/articles" className="text-sm font-semibold text-blue hover:text-blue-dark transition-colors">
           ← Back to articles
         </Link>
 
@@ -70,7 +70,7 @@ export default async function ArticlePage({ params }) {
               <Link
                 key={a.slug}
                 href={`/articles/${a.slug}`}
-                className="group block rounded-xl overflow-hidden bg-white border border-mist hover:border-sage/30 hover:shadow-sm transition-all"
+                className="group block rounded-xl overflow-hidden bg-white border border-mist hover:border-blue/30 hover:shadow-sm transition-all"
               >
                 <div className="relative h-28 overflow-hidden">
                   <Image
@@ -83,7 +83,7 @@ export default async function ArticlePage({ params }) {
                   />
                 </div>
                 <div className="p-3">
-                  <h3 className="text-sm font-medium text-ink line-clamp-2 group-hover:text-sage transition-colors">
+                  <h3 className="text-sm font-medium text-ink line-clamp-2 group-hover:text-blue transition-colors">
                     {a.title}
                   </h3>
                 </div>

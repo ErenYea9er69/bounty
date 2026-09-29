@@ -68,7 +68,7 @@ export default function ChecklistTool() {
           <span className="text-slate">{pct}%</span>
         </div>
         <div className="h-2 rounded-full bg-mist overflow-hidden" role="progressbar" aria-valuenow={pct} aria-valuemin={0} aria-valuemax={100} aria-label="Checklist progress">
-          <div className="h-full bg-sage transition-all duration-300" style={{ width: `${pct}%` }} />
+          <div className="h-full bg-blue transition-all duration-300" style={{ width: `${pct}%` }} />
         </div>
       </div>
 
@@ -86,7 +86,7 @@ export default function ChecklistTool() {
                         type="checkbox"
                         checked={!!done[id]}
                         onChange={() => setDone((d) => ({ ...d, [id]: !d[id] }))}
-                        className="mt-0.5 h-5 w-5 shrink-0 accent-sage"
+                        className="mt-0.5 h-5 w-5 shrink-0 accent-blue"
                       />
                       <span className={done[id] ? "text-slate line-through" : "text-ink"}>{item}</span>
                     </label>

@@ -38,7 +38,7 @@ function Results() {
       <ul className="space-y-3">
         {hits.map((r) => (
           <li key={r.href}>
-            <Link href={r.href} className="block bg-white border border-mist rounded-2xl p-5 hover:border-sage transition-colors">
+            <Link href={r.href} className="block bg-white border border-mist rounded-2xl p-5 hover:border-blue transition-colors">
               <span className="font-heading text-lg text-ink">{r.title}</span>
               <span className="block text-sm text-slate mt-1">{r.desc}</span>
             </Link>

@@ -16,7 +16,7 @@ export default function RegisterPage() {
     return (
       <div className="pt-24 pb-20">
         <div className="max-w-md mx-auto px-5 text-center">
-          <div className="w-16 h-16 rounded-full bg-sage/10 text-sage flex items-center justify-center mx-auto mb-6">
+          <div className="w-16 h-16 rounded-full bg-blue/10 text-blue flex items-center justify-center mx-auto mb-6">
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <path d="M20 6L9 17l-5-5" />
             </svg>
@@ -29,7 +29,7 @@ export default function RegisterPage() {
           </p>
           <Link
             href="/"
-            className="inline-flex items-center h-11 px-6 bg-sage hover:bg-sage-dark text-white font-semibold rounded-full transition-colors text-sm"
+            className="inline-flex items-center h-11 px-6 bg-blue hover:bg-blue-dark text-white font-semibold rounded-full transition-colors text-sm"
           >
             Go to homepage
           </Link>
@@ -55,7 +55,7 @@ export default function RegisterPage() {
               required
               value={name}
               onChange={(e) => setName(e.target.value)}
-              className="w-full h-12 px-4 border-2 border-mist rounded-xl bg-white text-sm focus:border-sage focus:outline-none transition-colors"
+              className="w-full h-12 px-4 border-2 border-mist rounded-xl bg-white text-sm focus:border-blue focus:outline-none transition-colors"
             />
           </div>
           <div>
@@ -64,7 +64,7 @@ export default function RegisterPage() {
               id="email"
               type="email"
               required
-              className="w-full h-12 px-4 border-2 border-mist rounded-xl bg-white text-sm focus:border-sage focus:outline-none transition-colors"
+              className="w-full h-12 px-4 border-2 border-mist rounded-xl bg-white text-sm focus:border-blue focus:outline-none transition-colors"
             />
           </div>
           <div>
@@ -74,14 +74,14 @@ export default function RegisterPage() {
               type="password"
               required
               minLength={8}
-              className="w-full h-12 px-4 border-2 border-mist rounded-xl bg-white text-sm focus:border-sage focus:outline-none transition-colors"
+              className="w-full h-12 px-4 border-2 border-mist rounded-xl bg-white text-sm focus:border-blue focus:outline-none transition-colors"
             />
           </div>
           <div>
             <label htmlFor="status" className="block text-sm font-medium text-ink mb-2">Are you, or is your partner, pregnant?</label>
             <select
               id="status"
-              className="w-full h-12 px-4 border-2 border-mist rounded-xl bg-white text-sm focus:border-sage focus:outline-none transition-colors"
+              className="w-full h-12 px-4 border-2 border-mist rounded-xl bg-white text-sm focus:border-blue focus:outline-none transition-colors"
             >
               <option>Yes</option>
               <option>No, we're trying</option>
@@ -89,12 +89,12 @@ export default function RegisterPage() {
             </select>
           </div>
           <label className="flex items-start gap-3 text-xs text-slate pt-2">
-            <input type="checkbox" className="mt-0.5 accent-sage" />
+            <input type="checkbox" className="mt-0.5 accent-blue" />
             Send me weekly development updates, offers, and news from Bounty. You can unsubscribe any time.
           </label>
           <button
             type="submit"
-            className="w-full h-12 bg-sage hover:bg-sage-dark text-white font-semibold rounded-xl transition-colors text-sm"
+            className="w-full h-12 bg-blue hover:bg-blue-dark text-white font-semibold rounded-xl transition-colors text-sm"
           >
             Create your free account
           </button>
@@ -105,7 +105,7 @@ export default function RegisterPage() {
 
         <p className="text-sm text-slate text-center mt-6">
           Already have an account?{" "}
-          <Link href="/login" className="font-semibold text-sage hover:text-sage-dark transition-colors">
+          <Link href="/login" className="font-semibold text-blue hover:text-blue-dark transition-colors">
             Log in
           </Link>
         </p>

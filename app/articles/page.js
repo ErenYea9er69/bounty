@@ -25,7 +25,7 @@ export default function ArticlesPage() {
             <Link
               key={article.slug}
               href={`/articles/${article.slug}`}
-              className="group block bg-white border border-mist rounded-2xl overflow-hidden hover:shadow-sm hover:border-sage/30 transition-all"
+              className="group block bg-white border border-mist rounded-2xl overflow-hidden hover:shadow-sm hover:border-blue/30 transition-all"
             >
               <div className="relative h-48 overflow-hidden">
                 <Image
@@ -37,12 +37,12 @@ export default function ArticlesPage() {
                   loading="lazy"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-ink/60 via-transparent to-transparent" />
-                <span className="absolute top-4 left-4 inline-block px-3 py-1 text-xs font-semibold text-white bg-sage rounded-full">
+                <span className="absolute top-4 left-4 inline-block px-3 py-1 text-xs font-semibold text-white bg-blue rounded-full">
                   {article.tag}
                 </span>
               </div>
               <div className="p-5">
-                <h2 className="font-heading text-lg font-medium text-ink mb-2 group-hover:text-sage transition-colors">
+                <h2 className="font-heading text-lg font-medium text-ink mb-2 group-hover:text-blue transition-colors">
                   {article.title}
                 </h2>
                 <p className="text-sm text-slate leading-relaxed mb-3">{article.desc}</p>

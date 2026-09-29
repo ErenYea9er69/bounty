@@ -14,7 +14,7 @@ export default function ContactPage() {
         </p>
 
         {sent ? (
-          <div className="bg-sage/5 border border-sage/20 rounded-2xl p-6 text-center">
+          <div className="bg-blue/5 border border-blue/20 rounded-2xl p-6 text-center">
             <h2 className="font-heading text-lg text-ink mb-2">Message sent</h2>
             <p className="text-sm text-slate">Thanks for reaching out. This is a demo form, so no message was actually sent.</p>
           </div>
@@ -25,17 +25,17 @@ export default function ContactPage() {
           >
             <div>
               <label htmlFor="name" className="block text-sm font-medium text-ink mb-2">Name</label>
-              <input id="name" type="text" required className="w-full h-12 px-4 border-2 border-mist rounded-xl bg-white text-sm focus:border-sage focus:outline-none transition-colors" />
+              <input id="name" type="text" required className="w-full h-12 px-4 border-2 border-mist rounded-xl bg-white text-sm focus:border-blue focus:outline-none transition-colors" />
             </div>
             <div>
               <label htmlFor="email" className="block text-sm font-medium text-ink mb-2">Email</label>
-              <input id="email" type="email" required className="w-full h-12 px-4 border-2 border-mist rounded-xl bg-white text-sm focus:border-sage focus:outline-none transition-colors" />
+              <input id="email" type="email" required className="w-full h-12 px-4 border-2 border-mist rounded-xl bg-white text-sm focus:border-blue focus:outline-none transition-colors" />
             </div>
             <div>
               <label htmlFor="message" className="block text-sm font-medium text-ink mb-2">Message</label>
-              <textarea id="message" rows={5} required className="w-full px-4 py-3 border-2 border-mist rounded-xl bg-white text-sm focus:border-sage focus:outline-none transition-colors resize-none" />
+              <textarea id="message" rows={5} required className="w-full px-4 py-3 border-2 border-mist rounded-xl bg-white text-sm focus:border-blue focus:outline-none transition-colors resize-none" />
             </div>
-            <button type="submit" className="w-full h-12 bg-sage hover:bg-sage-dark text-white font-semibold rounded-xl transition-colors text-sm">
+            <button type="submit" className="w-full h-12 bg-blue hover:bg-blue-dark text-white font-semibold rounded-xl transition-colors text-sm">
               Send message
             </button>
           </form>

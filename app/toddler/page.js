@@ -49,8 +49,8 @@ export default function ToddlerPage() {
               onClick={() => setActiveMonth(m.month)}
               className={`h-12 px-5 rounded-xl text-sm font-semibold transition-all scroll-mt-24 ${
                 activeMonth === m.month
-                  ? "bg-sage text-white shadow-md scale-105"
-                  : "bg-white border border-mist text-slate hover:border-sage/40 hover:text-ink"
+                  ? "bg-blue text-white shadow-md scale-105"
+                  : "bg-white border border-mist text-slate hover:border-blue/40 hover:text-ink"
               }`}
             >
               {m.month}m
@@ -59,8 +59,8 @@ export default function ToddlerPage() {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-20">
-          <div className="bg-sage/5 border border-sage/15 rounded-2xl p-8 text-center flex flex-col items-center justify-center">
-            <p className="text-xs text-sage font-semibold mb-2">{current.month} months</p>
+          <div className="bg-blue/5 border border-blue/15 rounded-2xl p-8 text-center flex flex-col items-center justify-center">
+            <p className="text-xs text-blue font-semibold mb-2">{current.month} months</p>
             <h3 className="font-heading text-2xl text-ink font-medium">{current.title}</h3>
           </div>
           <div className="lg:col-span-2 bg-white border border-mist rounded-2xl p-8">

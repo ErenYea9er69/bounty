@@ -31,7 +31,7 @@ export default function SupportPage() {
         <ul className="space-y-4 mb-10">
           {orgs.map((o) => (
             <li key={o.name} className="bg-white border border-mist rounded-2xl p-6">
-              <a href={o.url} target="_blank" rel="noopener noreferrer" className="font-heading text-lg text-sage-dark hover:underline">
+              <a href={o.url} target="_blank" rel="noopener noreferrer" className="font-heading text-lg text-blue-dark hover:underline">
                 {o.name}
               </a>
               <p className="text-sm text-slate mt-1">{o.desc}</p>

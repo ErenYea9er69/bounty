@@ -59,13 +59,13 @@ export default function Timeline() {
                     isMilestone
                       ? `w-9 h-9 text-xs border-2 ${
                           isSelected
-                            ? "bg-sage border-sage text-white"
-                            : "border-sage/40 text-sage hover:border-sage hover:bg-sage/10"
+                            ? "bg-blue border-blue text-white"
+                            : "border-blue/40 text-blue hover:border-blue hover:bg-blue/10"
                         }`
                       : `w-3 h-3 ${
                           isSelected
-                            ? "bg-sage scale-150"
-                            : "bg-sage/25 hover:bg-sage/50"
+                            ? "bg-blue scale-150"
+                            : "bg-blue/25 hover:bg-blue/50"
                         }`
                   }`}
                   aria-label={`Week ${week}`}
@@ -105,7 +105,7 @@ export default function Timeline() {
                 <Link
                   key={m}
                   href={`/toddler#month-${m}`}
-                  className="w-9 h-9 shrink-0 rounded-full border-2 border-sage/30 flex items-center justify-center text-xs font-medium text-sage hover:bg-sage/10 hover:border-sage transition-colors"
+                  className="w-9 h-9 shrink-0 rounded-full border-2 border-blue/30 flex items-center justify-center text-xs font-medium text-blue hover:bg-blue/10 hover:border-blue transition-colors"
                 >
                   {m}
                 </Link>
@@ -117,8 +117,8 @@ export default function Timeline() {
         {/* Detail panel */}
         {selectedWeek && (
           <div className="bg-white rounded-2xl p-6 flex flex-col sm:flex-row items-start gap-5 shadow-sm border border-mist">
-            <div className="w-14 h-14 shrink-0 rounded-xl bg-sage/10 flex items-center justify-center">
-              <span className="text-lg font-heading font-semibold text-sage">{selectedWeek}</span>
+            <div className="w-14 h-14 shrink-0 rounded-xl bg-blue/10 flex items-center justify-center">
+              <span className="text-lg font-heading font-semibold text-blue">{selectedWeek}</span>
             </div>
             <div>
               <h4 className="font-heading text-lg font-medium text-ink mb-1">
@@ -129,7 +129,7 @@ export default function Timeline() {
               </p>
               <Link
                 href={`/pregnancy#week-${selectedWeek}`}
-                className="text-sm font-semibold text-sage hover:text-sage-dark transition-colors"
+                className="text-sm font-semibold text-blue hover:text-blue-dark transition-colors"
               >
                 Read the full guide
               </Link>

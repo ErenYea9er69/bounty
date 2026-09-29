@@ -15,7 +15,7 @@ export default function GuidesPage() {
             <h2 id={`g-${grp}`} className="font-heading text-2xl text-ink mb-4">{grp}</h2>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
               {guides.filter((g) => g.group === grp).map((g) => (
-                <Link key={g.slug} href={`/guides/${g.slug}`} className="bg-white border border-mist rounded-2xl p-6 hover:border-sage transition-colors">
+                <Link key={g.slug} href={`/guides/${g.slug}`} className="bg-white border border-mist rounded-2xl p-6 hover:border-blue transition-colors">
                   <h3 className="font-heading text-base font-medium text-ink mb-2">{g.title}</h3>
                   <p className="text-sm text-slate">{g.desc}</p>
                 </Link>

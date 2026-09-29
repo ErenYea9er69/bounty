@@ -52,7 +52,7 @@ export default function Footer() {
           {/* Brand */}
           <div className="lg:max-w-xs shrink-0">
             <div className="flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 rounded-full bg-sage flex items-center justify-center">
+              <div className="w-8 h-8 rounded-full bg-blue flex items-center justify-center">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
                   <circle cx="12" cy="9" r="4" fill="white" />
                   <ellipse cx="12" cy="18" rx="6" ry="4" fill="white" opacity="0.7" />

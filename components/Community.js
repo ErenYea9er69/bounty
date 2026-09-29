@@ -39,7 +39,7 @@ export default function Community() {
                     height="18"
                     viewBox="0 0 24 24"
                     fill="none"
-                    className="text-sage shrink-0 mt-0.5"
+                    className="text-blue shrink-0 mt-0.5"
                   >
                     <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2" />
                     <path d="M8 12l3 3 5-5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />

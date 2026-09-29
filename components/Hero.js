@@ -31,7 +31,7 @@ export default function Hero() {
           <div className="flex flex-wrap gap-3">
             <Link
               href="/due-date"
-              className="inline-flex items-center h-12 px-7 bg-sage hover:bg-sage-dark text-white font-semibold rounded-full transition-colors text-sm"
+              className="inline-flex items-center h-12 px-7 bg-blue hover:bg-blue-dark text-white font-semibold rounded-full transition-colors text-sm"
             >
               Calculate your due date
             </Link>

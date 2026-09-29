@@ -76,7 +76,7 @@ export default function ToolsBar() {
   }, []);
 
   return (
-    <section className="relative py-8 bg-gradient-to-r from-sage/10 via-sage/20 to-sage/10 z-10">
+    <section className="relative py-8 bg-gradient-to-r from-blue/10 via-blue/20 to-blue/10 z-10">
       <div className="relative max-w-7xl mx-auto px-5" ref={stripRef}>
         <div className="flex justify-start gap-4 md:gap-6 overflow-x-auto pb-6 pt-2 scrollbar-hide snap-x snap-mandatory">
           {tools.map((tool, i) => (
@@ -90,7 +90,7 @@ export default function ToolsBar() {
               }`}
               style={{ transitionDelay: `${i * 80}ms` }}
             >
-              <div className="w-12 h-12 rounded-xl bg-sage/10 flex items-center justify-center text-sage group-hover:bg-sage group-hover:text-white transition-colors">
+              <div className="w-12 h-12 rounded-xl bg-blue/10 flex items-center justify-center text-blue group-hover:bg-blue group-hover:text-white transition-colors">
                 {tool.icon}
               </div>
               <span className="text-sm font-medium text-ink text-center leading-tight">

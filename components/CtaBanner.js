@@ -4,7 +4,7 @@ export default function CtaBanner() {
   return (
     <section className="py-20">
       <div className="max-w-7xl mx-auto px-5">
-        <div className="bg-sage rounded-3xl overflow-hidden">
+        <div className="bg-blue rounded-3xl overflow-hidden">
           <div className="px-8 py-14 sm:px-14 sm:py-16 flex flex-col lg:flex-row items-start lg:items-center gap-10 lg:gap-16">
             {/* Text */}
             <div className="flex-1">
@@ -17,7 +17,7 @@ export default function CtaBanner() {
               <div className="flex flex-wrap items-center gap-4">
                 <Link
                   href="/register"
-                  className="inline-flex items-center h-12 px-8 bg-white text-sage font-semibold rounded-full hover:bg-linen transition-colors text-sm"
+                  className="inline-flex items-center h-12 px-8 bg-white text-blue font-semibold rounded-full hover:bg-linen transition-colors text-sm"
                 >
                   Create your free account
                 </Link>
