@@ -23,10 +23,10 @@ export default function Hero() {
       <div className="relative max-w-7xl mx-auto px-5 pt-24 pb-16 w-full">
         <div className="max-w-xl">
           <h1 className="font-heading text-4xl sm:text-5xl lg:text-[3.25rem] font-medium text-ink leading-[1.15] mb-5">
-            Your journey into parenthood starts here
+            Plan your pregnancy and raise your child
           </h1>
           <p className="text-slate text-base sm:text-lg leading-relaxed mb-8 max-w-md">
-            Expert guidance, practical tools, and a caring community — from trying to conceive, through pregnancy, and into raising your little one.
+            Start by tracking your ovulation cycle. Once pregnant, follow fetal development week by week through detailed medical updates; we explain exactly what happens inside your body. Get immediate answers on infant sleep routines or toddler feeding schedules.
           </p>
           <div className="flex flex-wrap gap-3">
             <Link
